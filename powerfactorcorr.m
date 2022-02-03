@@ -5,7 +5,7 @@ function [Q_c] = powerfactorcorr(P,Q_l)
 %  This function uses the Real Power (P in Mega-Watts) and Reactive Power
 %  (Q_l in Mega-VAr) in order to calculate the required reactive power 
 %  (Q_c) in order for the apparent power load to have a corrected Power
-%  Factor (PF) between 0.95 < pf < 1.0. The function returns the reactive
+%  Factor (PF) between 0.95 lag < pf < 1.0. The function returns the reactive
 %  power Q_c if the Magnitude of the apparent power (S_load) is not greater
 %  than 10MVA. If the Magnitude of S_load > 10MVA, it returns NaN. Else,
 %  the function returns a single Q_c value with a Power Factor between 0.95
