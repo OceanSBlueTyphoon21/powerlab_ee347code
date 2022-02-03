@@ -1,6 +1,6 @@
 function [Q_c] = powerfactorcorr(P,Q_l)
 %powerfactorcorr Determines the required reactive power (Q_c MVAr) for given
-%load in order to generate a PFC within 0.95 to 1.0
+%load in order to generate a PFC within 0.95 lag to 1.0
 %  Description:
 %  This function uses the Real Power (P in Mega-Watts) and Reactive Power
 %  (Q_l in Mega-VAr) in order to calculate the required reactive power 
