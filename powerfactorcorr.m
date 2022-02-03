@@ -36,7 +36,7 @@ else
         qc_total = qc_total + q_c;                                  % Add the q_c to qc_total (summation)
     end
     qc_ave = qc_total/6;                                            % Determine the qc_ave (average Q_c value)
-    Q_c = floor(qc_ave) + floor((qc_ave-floor(qc_ave))/0.25)*0.25;  % Round down the Q_c value and return to mainline 
+    Q_c = double(floor(qc_ave) + floor((qc_ave-floor(qc_ave))/0.25)*0.25);  % Round down the Q_c value and return to mainline 
 end
 end
 
