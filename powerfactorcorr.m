@@ -1,11 +1,11 @@
 function [Q_c] = powerfactorcorr(P,Q_l)
-%powerfactorcorr Determines the required reactive power (Q_c MVAr) for given
-%load in order to generate a PFC within 0.95 lag to 1.0
+%powerfactorcorr Determines the required reactive power (Q_c MVA) for given
+%load in order to generate a PFC within 0.95 to 1.0
 %  Description:
 %  This function uses the Real Power (P in Mega-Watts) and Reactive Power
 %  (Q_l in Mega-VAr) in order to calculate the required reactive power 
 %  (Q_c) in order for the apparent power load to have a corrected Power
-%  Factor (PF) between 0.95 lag < pf < 1.0. The function returns the reactive
+%  Factor (PF) between 0.95 < pf < 1.0. The function returns the reactive
 %  power Q_c if the Magnitude of the apparent power (S_load) is not greater
 %  than 10MVA. If the Magnitude of S_load > 10MVA, it returns NaN. Else,
 %  the function returns a single Q_c value with a Power Factor between 0.95
@@ -36,7 +36,12 @@ else
         qc_total = qc_total + q_c;                                  % Add the q_c to qc_total (summation)
     end
     qc_ave = qc_total/6;                                            % Determine the qc_ave (average Q_c value)
-    Q_c = double(floor(qc_ave) + floor((qc_ave-floor(qc_ave))/0.25)*0.25);  % Round down the Q_c value and return to mainline 
+    qc_re = double(floor(qc_ave) + floor((qc_ave-floor(qc_ave))/0.25)*0.25);  % Round down the Q_c value and return to mainline
+    if qc_re < 0
+        Q_c = 0;
+    else
+        Q_c = qc_re;
+    end
 end
 end
 
