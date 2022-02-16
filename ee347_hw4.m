@@ -1,4 +1,4 @@
-% EE347 - HW#4
+% EE347 - HW#4 Problem 1
 % Student: Anthony Bruno
 % Problem #1 - Transmission Lines (properties from ALCAN Tables)
 % Description:
