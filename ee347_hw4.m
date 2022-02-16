@@ -1,7 +1,11 @@
 % EE347 - HW#4
 % Student: Anthony Bruno
 % Problem #1 - Transmission Lines (properties from ALCAN Tables)
-
+% Description:
+% This script is able to calculate the r,x_l, and y_c per phase
+% for a 3phase TLine and the Total Resistance, Inductance, and 
+% Admittance of the TLine. The Script also causes the ABCD 
+% coefficients for ABCD TLine matrix.
 clc
 clear
 format short
